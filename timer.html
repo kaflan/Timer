@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+	<script>
+	 var time = 0;
+	 var lose;
+
+	 $(".push").click(function() {
+		/* Act on the event */
+
+	 lose = setInterval(function(){
+		time++;
+		$("#tmr").text(time/10);
+	},100);
+         
+		});
+
+
+        var stopTime = $(".stop").click(function() {
+            if ( time %10 == 0){
+            alert('win');
+            } else {
+            alert("lose");
+            }
+        
+ 		clearInterval(lose);
+        
+ 		});
+
+
+
+	</script>
+</head>
+<body>
+	<section class="timer">
+		<h1>Timer</h1>
+		<div class="stopTimer" id="tmr"> <div/>
+	<button class="push"><p>start</p></button>
+	<button class="stop"><p>stop</p></button>
+	</section>
+</body>
+</html>
+
